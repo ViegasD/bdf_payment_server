@@ -1,5 +1,17 @@
 {
+  "name": "pix-api-bdf",
+  "version": "1.0.0",
+  "description": "API Node.js para registrar PIX pagos, salvar em planilha Google e MySQL",
+  "main": "bdf.js",
+  "scripts": {
+    "start": "node bdf.js"
+  },
   "dependencies": {
-    "googleapis": "^149.0.0"
-  }
+    "dotenv": "^16.0.3",
+    "googleapis": "^149.0.0",
+    "mercadopago": "^1.5.17",
+    "mysql": "^2.18.1"
+  },
+  "author": "Seu Nome",
+  "license": "MIT"
 }
