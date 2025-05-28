@@ -15,7 +15,7 @@ const dns = require('node:dns');
 const cors = require('cors');
 
 
-valor = process.env.VALOR
+valor = float(process.env.VALOR)
 
 app.use(cors({
     origin: '*', // Permite qualquer origem (Ajuste para maior segurança se necessário)
@@ -121,7 +121,6 @@ app.post('/generate-pix', async (req, res) => {
         
         const { cpf, emailPix } = req.body;
         const idempotencyKey = uuidv4();
-        valor = 8.99
         const paymentData = {
             transaction_amount: valor, // Valor do pagamento em reais (ex: 100 para R$100,00)
             description: 'Pagamento via Pix',
