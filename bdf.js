@@ -15,7 +15,7 @@ const dns = require('node:dns');
 const cors = require('cors');
 
 
-valor = float(process.env.VALOR)
+const valor = parseFloat(process.env.VALOR);
 
 app.use(cors({
     origin: '*', // Permite qualquer origem (Ajuste para maior segurança se necessário)
@@ -119,7 +119,7 @@ async function adicionarTelefoneNaPlanilha(telefone) {
 app.post('/generate-pix', async (req, res) => {
     try {
         
-        const { cpf, emailPix } = req.body;
+        const { cpf, emailPix, numero } = req.body;
         const idempotencyKey = uuidv4();
         const paymentData = {
             transaction_amount: valor, // Valor do pagamento em reais (ex: 100 para R$100,00)
@@ -165,7 +165,7 @@ app.post('/generate-pix', async (req, res) => {
         const [date, time] = formattedTime.split(' ');
         const [day, month, year] = date.split('/');
         const brasilTime = `${year}-${month}-${day} ${time}`;
-        insertTransaction(transactionId, brasilTime, cpf, emailPix, valor, 'enviado ao MP');
+        insertTransaction(transactionId, brasilTime, cpf, emailPix, valor, 'enviado ao MP', numero);
         // Retorna o QR Code Pix e a Transaction ID
         res.json({ pixCode, transactionId });
     } catch (error) {
