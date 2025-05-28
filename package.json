@@ -1,17 +1,19 @@
 {
-  "name": "pix-api-bdf",
+  "name": "baodefrete",
   "version": "1.0.0",
-  "description": "API Node.js para registrar PIX pagos, salvar em planilha Google e MySQL",
   "main": "bdf.js",
+  "type": "commonjs",
   "scripts": {
     "start": "node bdf.js"
   },
   "dependencies": {
-    "dotenv": "^16.0.3",
-    "googleapis": "^149.0.0",
-    "mercadopago": "^1.5.17",
-    "mysql": "^2.18.1"
-  },
-  "author": "Seu Nome",
-  "license": "MIT"
+    "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mysql2": "^3.9.1",
+    "uuid": "^9.0.1",
+    "googleapis": "^131.0.0"
+  }
 }
