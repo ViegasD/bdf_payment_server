@@ -6,6 +6,8 @@ const axios = require('axios');
 const { v4: uuidv4 } = require('uuid'); // Para gerar UUIDs
 const os = require('os');
 const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 const PORT = 3221;
 const mysql = require('mysql2/promise');
 const bodyParser = require('body-parser');
