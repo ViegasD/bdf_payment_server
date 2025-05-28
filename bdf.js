@@ -248,5 +248,5 @@ app.post('/payment-notification', async (req, res) => {
 
 // Inicia o servidor
 app.listen(PORT, () => {
-    //console.log(`Servidor rodando em ************`);
+    console.log(`Servidor rodando em ${PORT}`);
 });
